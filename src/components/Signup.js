@@ -22,25 +22,27 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log('handleSubmit triggered');  // Add this to confirm form is being submitted
+  
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-
+  
     const existingUser = JSON.parse(localStorage.getItem('users')) || [];
-
+  
     existingUser.push({
       username: formData.username,
       email: formData.email,
       password: formData.password,
     });
-
+  
     localStorage.setItem('users', JSON.stringify(existingUser));
-
-    console.log('Registration successful');
-    navigate('/login');
+  
+    alert('Registration successful');  // This should now show if the form was submitted correctly
+    navigate('/?view=login');
   };
+  
 
   return (
     <div>

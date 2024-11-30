@@ -28,11 +28,11 @@ body {
   button {
     background-color: #4CAF50; /* Green */
     color: white;
-    border: none;
+    border: 10px;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    margin: 0 5px;
+    margin: 10 5px;
   }
   
   .signup-form {
@@ -64,5 +64,43 @@ body {
     .container {
       width: 90%;
     }
+  }
+  
+  .logsigncontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    min-width: 600px; /* Minimum width for consistency */
+    min-height: 400px; /* Ensure container doesn't shrink vertically */
+    margin: auto;
+    transition: all 0.3s ease; /* Smooth transitions for layout changes */
+  }
+  
+  .left-section,
+  .right-section {
+    flex: 1; /* Take up equal space */
+    padding: 20px;
+  }
+  
+  .left-section {
+    border-right: 1px solid #ccc; /* Add a divider */
+    text-align: center;
+  }
+  
+  .right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Prevent content from breaking layout */
+  }
+  
+  .right-section > * {
+    width: 100%; /* Ensure the child content adapts to the section width */
   }
   

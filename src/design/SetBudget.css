@@ -1,7 +1,5 @@
 /* Main container */
 .set-budget-container {
-  width: 100%;
-  max-width: 450px;
   margin: 0 auto;
   padding: 30px;
   background-color: #ffffff;
@@ -28,7 +26,6 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Adds space between label and input */
 }
 
 /* Label styling */
@@ -58,7 +55,6 @@
   background-color: #eaf7ff; /* Light blue background for better visibility */
   font-size: 18px; /* Larger font size for emphasis */
   font-weight: bold; /* Make the font bold to catch attention */
-  padding: 16px; /* Add padding to make the input more prominent */
 }
 
 .form-control:focus {
@@ -87,7 +83,6 @@
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s;
-  width: 100%;
 }
 
 /* Button hover effect */

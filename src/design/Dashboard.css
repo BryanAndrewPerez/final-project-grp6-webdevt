@@ -1,0 +1,51 @@
+/* Ensure the main container takes full height */
+
+  
+  /* Sidebar container */
+  .sidebar {
+    position: fixed; /* Fix the sidebar to the left of the screen */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px; /* Space between buttons */
+    margin-right: 20px;
+  }
+  
+  /* Main content area */
+  .main-content {
+    padding: 20px;
+    overflow-y: auto;
+    width: 700px;
+    height: 700px;
+  }
+  
+  /* Button styles */
+  .sidebar button {
+    width: 100%;  
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sidebar button:active {
+    background-color: #003f7f;
+  }
+  
