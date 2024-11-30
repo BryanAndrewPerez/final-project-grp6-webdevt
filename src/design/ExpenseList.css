@@ -1,57 +1,86 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5; /* Light gray background */
+/* Overall container */
+.filter-sort-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
   }
   
-  .container {
-    background-color: #fff; /* White background for container */
-    padding: 24px;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    width: 320px;
+  .filter-sort-item {
+    flex: 1;
+    margin-right: 20px;
   }
   
-  h2 {
-    text-align: center;
-    margin-bottom: 16px;
-    font-weight: 500;
-    color: #4CAF50; /* Green */
+  .filter-sort-item:last-child {
+    margin-right: 0;
   }
   
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 400;
-    color: #555;
-  }
-  
-  input, select {
+  .filter-sort-select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  .filter-sort-select:focus {
+    border-color: #2196f3;
+    outline: none;
+  }
+  
+  /* Table styling */
+  .expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .expense-table th,
+  .expense-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .expense-table th {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .expense-table td {
+    background-color: #f9f9f9;
+  }
+  
+  .expense-table input[type="number"],
+  .expense-table input[type="text"],
+  .expense-table input[type="date"] {
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
   }
   
-  button {
+  .expense-table button {
     background-color: #4CAF50; /* Green */
-    color: #fff; /* White text */
-    padding: 12px 16px;
     border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    width: 100%;
   }
   
-  button:hover {
-    background-color: #388E3C; /* Darker green */
+  .expense-table button:hover {
+    background-color: #45a049; /* Darker green */
   }
+  
+  .expense-table button:focus {
+    outline: none;
+  }
+  

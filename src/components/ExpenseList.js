@@ -109,34 +109,36 @@ const ExpenseList = () => {
     <div>
       <h2>Expenses</h2>
 
-      <div>
-        <label>Sort By: </label>
-        <select value={sortOption} onChange={handleSortChange}>
-          <option value="">-- Select --</option>
-          <option value="cost-asc">Cost (Low to High)</option>
-          <option value="cost-desc">Cost (High to Low)</option>
-          <option value="date-asc">Date (Oldest to Newest)</option>
-          <option value="date-desc">Date (Newest to Oldest)</option>
-        </select>
-      </div>
+      <div className="filter-sort-container">
+        <div className="filter-sort-item">
+          <label>Sort By: </label>
+          <select value={sortOption} onChange={handleSortChange} className="filter-sort-select">
+            <option value="">-- Select --</option>
+            <option value="cost-asc">Cost (Low to High)</option>
+            <option value="cost-desc">Cost (High to Low)</option>
+            <option value="date-asc">Date (Oldest to Newest)</option>
+            <option value="date-desc">Date (Newest to Oldest)</option>
+          </select>
+        </div>
 
-      <div>
-        <label>Filter by Category: </label>
-        <select value={selectedCategory} onChange={handleCategoryFilter}>
-          <option value="">-- All Categories --</option>
-          <option value="Food">Food</option>
-          <option value="Transportation">Transportation</option>
-          <option value="Utilities">Utilities</option>
-          <option value="Entertainment">Entertainment</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Others">Others</option>
-        </select>
+        <div className="filter-sort-item">
+          <label>Filter by Category: </label>
+          <select value={selectedCategory} onChange={handleCategoryFilter} className="filter-sort-select">
+            <option value="">-- All Categories --</option>
+            <option value="Food">Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
       </div>
 
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
       ) : (
-        <table>
+        <table className="expense-table">
           <thead>
             <tr>
               <th>Amount</th>

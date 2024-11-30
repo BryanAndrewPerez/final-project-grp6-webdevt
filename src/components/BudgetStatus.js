@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../design/BudgetStatus.css'; 
 
 const BudgetModal = ({ isOpen, onClose, onUpdate }) => {
   const [amount, setAmount] = useState(0);
@@ -15,8 +16,8 @@ const BudgetModal = ({ isOpen, onClose, onUpdate }) => {
   if (!isOpen) return null;
 
   return (
-    <div style={modalStyles.overlay}>
-      <div style={modalStyles.modal}>
+    <div className="modal-overlay">
+      <div className="modal">
         <h3>Update Budget</h3>
         <form onSubmit={handleSubmit}>
           <input
@@ -106,7 +107,7 @@ const BudgetStatus = () => {
   };
 
   return (
-    <div>
+    <div className="budget-status-container">
       <h2>Budget Status</h2>
       <div>
         <p>Total Budget: {budgetStatus.totalBudget}</p>
@@ -116,7 +117,7 @@ const BudgetStatus = () => {
         <p>Threshold: {threshold}</p>
       </div>
 
-      {notification && <p style={{ color: 'red' }}>{notification}</p>}
+      {notification && <p className="notification">{notification}</p>}
 
       <button onClick={() => setIsModalOpen(true)}>Update Budget</button>
 
@@ -133,27 +134,6 @@ const BudgetStatus = () => {
       </div>
     </div>
   );
-};
-
-const modalStyles = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modal: {
-    background: '#fff',
-    padding: '20px',
-    borderRadius: '8px',
-    width: '300px',
-    textAlign: 'center',
-  },
 };
 
 export default BudgetStatus;
