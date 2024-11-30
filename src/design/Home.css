@@ -1,0 +1,68 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Light blue background for contrast */
+  }
+  
+  .container {
+    background-color: #e0f7fa; /* Light green background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #008000; /* Dark green */
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #388e8e; /* Teal-ish green */
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .signup-form {
+    margin-top: 20px;
+  }
+  
+  .signup-form input[type="text"],
+  .signup-form input[type="email"],
+  .signup-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Slightly darker gray border */
+    border-radius: 5px;
+  }
+  
+  .social-icons {
+    margin-bottom: 15px;
+  }
+  
+  .social-icons i { 
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #4CAF50; /* Green social icons */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  

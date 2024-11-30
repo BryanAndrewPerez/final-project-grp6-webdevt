@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff; /* Light background */
+  }
+  
+  .login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for more depth */
+    width: 350px;
+    max-width: 100%;
+    border: 2px solid #2196f3; /* Border color matching the blue theme */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center;
+  }
+  
+  h2 {
+    color: #2196f3; /* Blue */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Dark gray */
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+  
+  input::placeholder { /* Style placeholders */
+    color: #aaa; /* Light gray */
+  }
+  
+  button[type="submit"] {
+    background-color: #2196f3; /* Blue */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+  }
+  
+  .login-footer { /* Style the "Don't have an account" section */
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555; /* Dark gray */
+  }
+  
+  .login-footer a {
+    color: #2196f3; /* Blue link color */
+    text-decoration: none;
+  }
+  
+  .login-footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

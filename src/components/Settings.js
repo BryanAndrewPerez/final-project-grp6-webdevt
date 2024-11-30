@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../design/Settings.css'
 
 const Settings = () => {
   const [account, setAccount] = useState({ username: '', email: '', password: '' });
