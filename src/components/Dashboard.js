@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 
+
 const Dashboard = () => {
   const navigate = useNavigate();
 
