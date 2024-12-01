@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, CartesianGrid as LineCartesianGrid } from 'recharts';
-
+import '../design/ExpenseReport.css';
 // Example default expenses
 const defaultExpenses = []; // Default empty expenses after clearing
 
@@ -67,7 +67,7 @@ const ExpenseReport = ({ userRole }) => {
   const trendData = Object.values(spendingTrends);
 
   return (
-    <div style={{ width: '100%', padding: '20px' }}>
+    <div className="expense-container" style={{ width: '100%', padding: '20px' }}>
       <h3>Expense Report</h3>
 
       {/* Total Expenses Overview */}
@@ -86,7 +86,7 @@ const ExpenseReport = ({ userRole }) => {
       )}
 
       {/* Graphs */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between',  marginBottom: '100px' }}>
         {/* Expense by Category */}
         <div style={{ width: '48%', height: 300 }}>
           <h4>Expense by Category</h4>
@@ -97,7 +97,10 @@ const ExpenseReport = ({ userRole }) => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="amount" fill="#8884d8" />
+              <Bar dataKey="amount" fill="#8884d8"
+              radius={[10, 10, 0, 0]}  // Rounded corners for the bars (top-left and top-right)
+              barSize={30}  // Adjust the width of each bar
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -120,8 +123,8 @@ const ExpenseReport = ({ userRole }) => {
 
       {/* Alerts */}
       {remainingBudget < 100 && (
-        <div style={{ color: 'red', fontWeight: 'bold' }}>
-          <h4>Warning: Your remaining budget is running low!</h4>
+        <div style={{ color: 'red', fontWeight: 'bold' }} className='warning'>
+          <h5>Warning: Your remaining budget is running low!</h5>
         </div>
       )}
     </div>

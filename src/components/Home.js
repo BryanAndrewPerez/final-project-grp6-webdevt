@@ -9,7 +9,7 @@ const Home = () => {
   const [activeView, setActiveView] = useState(''); // Tracks whether to show Login or Signup
   const location = useLocation();
 
-  // Check for query parameters on mount and update activeView if necessary
+  // Check for query parameters on mount and update active View if necessary
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const view = queryParams.get('view');

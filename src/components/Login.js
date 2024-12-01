@@ -28,7 +28,7 @@ const Login = () => {
     // Check if admin credentials are entered
     if (formData.email === 'admin@gmail.com' && formData.password === 'admin') {
       console.log('Admin login successful');
-      navigate('/admin-tab');  // Navigate to the Admin Tab
+      navigate('/admin-tab');  // Navigate to the AdminTab
     } else if (foundUser && foundUser.password === formData.password) {
       console.log('Login successful');
       navigate('/dashboard');

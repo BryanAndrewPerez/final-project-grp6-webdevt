@@ -10,7 +10,7 @@
         alert("Data has been reset!");
       }
     };
-
+// 
     return (
       <div>
         <h2>Admin Panel</h2>

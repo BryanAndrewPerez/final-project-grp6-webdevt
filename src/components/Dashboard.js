@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import '../design/Dashboard.css'; // Import the CSS file
+import logo from '../design/Teal_logo.png';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Dashboard = () => {
     <div>
       <div className="sidebar">
         <h1>Penny-Wise</h1>
+        <img src={logo} alt="Logo"  className='logo'/>
         <button onClick={() => navigate('set-budget')}>Set Budget</button>
         <button onClick={() => navigate('budget-status')}>Budget Status</button>
         <button onClick={() => navigate('add-expense')}>Add Expense</button>

@@ -107,11 +107,11 @@ const ExpenseList = () => {
 
   return (
     <div>
-      <h2>Expenses</h2>
-
+      
       <div className="filter-sort-container">
+        <h2>Expenses</h2>
         <div className="filter-sort-item">
-          <label>Sort By: </label>
+          <label style={{ color: 'white' }}>Sort By: </label>
           <select value={sortOption} onChange={handleSortChange} className="filter-sort-select">
             <option value="">-- Select --</option>
             <option value="cost-asc">Cost (Low to High)</option>
@@ -122,7 +122,7 @@ const ExpenseList = () => {
         </div>
 
         <div className="filter-sort-item">
-          <label>Filter by Category: </label>
+          <label style={{ color: 'white' }}>Filter by Category: </label>
           <select value={selectedCategory} onChange={handleCategoryFilter} className="filter-sort-select">
             <option value="">-- All Categories --</option>
             <option value="Food">Food</option>
@@ -133,7 +133,7 @@ const ExpenseList = () => {
             <option value="Others">Others</option>
           </select>
         </div>
-      </div>
+     
 
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
@@ -201,7 +201,7 @@ const ExpenseList = () => {
           </tbody>
         </table>
       )}
-    </div>
+    </div> </div>
   );
 };
 

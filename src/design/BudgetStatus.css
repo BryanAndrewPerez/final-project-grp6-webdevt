@@ -5,21 +5,25 @@
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color:  #1E1E1E;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #00C8C8;
   }
   
-  .budget-status-container h2 {
+ .budget-status-container h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 26px;
-    color: #333;
-  }
-  
+    color: #ffffff;
+  } 
+  .budget-status-container h3 {
+    font-size: 26px;
+    color: #ffffff;
+  } 
+
   .budget-status-container p {
     font-size: 16px;
-    color: #555;
+    color: #ffffff;
     margin: 10px 0;
   }
   
@@ -80,7 +84,7 @@
   /* Modal Buttons */
   .modal button {
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color: #FAF3E0;
     color: #fff;
     font-size: 16px;
     border: none;
@@ -92,7 +96,7 @@
   }
   
   .modal button:hover {
-    background-color: #45a049;
+    background-color: #FAF3E0;
   }
   
   .modal button[type="button"] {
@@ -123,8 +127,8 @@
   /* Update Budget Button */
   .budget-status-container button {
     padding: 12px 20px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #FAF3E0;
+    color: black;
     font-size: 16px;
     border: none;
     border-radius: 6px;
@@ -135,7 +139,7 @@
   }
   
   .budget-status-container button:hover {
-    background-color: #45a049;
+    background-color: #FAF3E0;
   }
   
   /* Modal Close Button */

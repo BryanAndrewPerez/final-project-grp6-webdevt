@@ -1,0 +1,25 @@
+.expense-container {
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #1E1E1E;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00C8C8;
+    box-sizing: border-box; /* Ensure padding is part of the element's total width */
+  }
+  
+  .expense-container h3{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+
+  .expense-container h4{
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  .warning{
+    font-size: 20px;
+    margin-top: 30px;
+  }

@@ -36,7 +36,7 @@ const AddExpense = () => {
       <h2>Add Expense</h2>
       <form onSubmit={handleAddExpense} className="expense-form">
         <div className="form-group">
-          <label>Amount</label>
+          <label style={{ color: 'white' }}>Amount</label>
           <input
             type="number"
             placeholder="Amount"
@@ -47,7 +47,7 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label>Description</label>
+          <label style={{ color: 'white' }}>Description</label>
           <input
             type="text"
             placeholder="Description"
@@ -58,7 +58,7 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label>Category</label>
+          <label style={{ color: 'white' }}>Category</label>
           <select
             value={expense.category}
             onChange={(e) => setExpense({ ...expense, category: e.target.value })}
@@ -72,7 +72,7 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label>Date</label>
+          <label style={{ color: 'white' }}>Date</label>
           <input
             type="date"
             value={expense.date}

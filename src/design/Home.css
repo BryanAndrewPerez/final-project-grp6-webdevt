@@ -71,9 +71,9 @@ body {
     justify-content: space-between;
     align-items: stretch;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #2F2F2F;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(247, 247, 247, 0.96);
     max-width: 800px;
     min-width: 600px; /* Minimum width for consistency */
     min-height: 500px; /* Ensure container doesn't shrink vertically */

@@ -1,4 +1,8 @@
 /* Ensure the main container takes full height */
+.logo {
+  width: 200px; /* Set the width */
+  height: auto; /* Maintain aspect ratio */
+}
 
   
   /* Sidebar container */
@@ -8,15 +12,17 @@
     left: 0;
     width: 200px;
     height: 100vh; /* Full height of the viewport */
-    background-color: #f8f9fa;
+    background-color:  #1E1E1E;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #00C8C8;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     gap: 10px; /* Space between buttons */
     margin-right: 20px;
+    border-top-right-radius: 10px; /* Top-right corner */
+  border-bottom-right-radius: 10px;
   }
   
   /* Main content area */
@@ -32,8 +38,8 @@
     width: 100%;  
     padding: 10px;
     border: none;
-    background-color: #007bff;
-    color: white;
+    background-color: #1E1E1E;
+    color: #00C8C8;
     text-align: left;
     font-size: 16px;
     border-radius: 5px;
@@ -42,10 +48,14 @@
   }
   
   .sidebar button:hover {
-    background-color: #0056b3;
+    background-color: #2D2D2D;
   }
   
   .sidebar button:active {
-    background-color: #003f7f;
+    background-color: #2D2D2D;
   }
   
+  .sidebar h1{
+    color : #00C8C8;
+    margin-bottom: 0;
+  }

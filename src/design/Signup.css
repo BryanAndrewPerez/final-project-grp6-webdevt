@@ -40,8 +40,8 @@ body {
   }
   
   button[type="submit"] {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: #FAF3E0; /* Green */
+    color: rgb(0, 0, 0);
     border: none;
     padding: 12px 20px;
     border-radius: 5px;
@@ -51,7 +51,7 @@ body {
   }
   
   button[type="submit"]:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #FAF3E0; /* Darker green on hover */
   }
   
   /* Responsive adjustments */

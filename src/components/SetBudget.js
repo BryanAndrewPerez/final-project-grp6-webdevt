@@ -54,7 +54,8 @@ const SetBudget = () => {
       <h2>Set Budget</h2>
       <form onSubmit={handleSetBudget} className="set-budget-form">
         <div className="form-group">
-          <label htmlFor="totalBudget">Total Budget</label>
+          <label style={{ color: 'white' }} htmlFor="totalBudget">Total Budget</label>
+
           <input
             id="totalBudget"
             className="form-control total-budget"
@@ -66,7 +67,8 @@ const SetBudget = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="timeframe">Timeframe</label>
+        <label style={{ color: 'white' }} htmlFor="totalBudget">Timeframe</label>
+
           <select
             id="timeframe"
             className="form-control"

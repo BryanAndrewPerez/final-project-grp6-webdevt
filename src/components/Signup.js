@@ -22,7 +22,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handleSubmit triggered');  // Add this to confirm form is being submitted
+    console.log('handleSubmit triggered');  // Add this to confirm form is being submitte
   
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");

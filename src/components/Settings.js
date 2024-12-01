@@ -55,7 +55,7 @@ const Settings = () => {
   };
 
   return (
-    <div>
+    <div className=' settings-container'>
       <h2>Account Settings</h2>
       <form onSubmit={handleUpdateAccount}>
         <input
@@ -76,9 +76,9 @@ const Settings = () => {
           value={account.password}
           onChange={(e) => setAccount({ ...account, password: e.target.value })}
         />
-        <button type="submit">Update Account</button>
+        
       </form>
-
+      <button type="submit" >Update Account</button>
       <button onClick={handleDeleteAccount}>Delete Account</button>
       
       {/* Log Out Button */}
