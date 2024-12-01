@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="sidebar">
-        <h1>Dashboard</h1>
+        <h1>Penny-Wise</h1>
         <button onClick={() => navigate('set-budget')}>Set Budget</button>
         <button onClick={() => navigate('budget-status')}>Budget Status</button>
         <button onClick={() => navigate('add-expense')}>Add Expense</button>

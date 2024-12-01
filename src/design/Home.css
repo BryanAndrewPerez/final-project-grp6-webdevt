@@ -76,7 +76,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     min-width: 600px; /* Minimum width for consistency */
-    min-height: 400px; /* Ensure container doesn't shrink vertically */
+    min-height: 500px; /* Ensure container doesn't shrink vertically */
     margin: auto;
     transition: all 0.3s ease; /* Smooth transitions for layout changes */
   }
@@ -102,5 +102,10 @@ body {
   
   .right-section > * {
     width: 100%; /* Ensure the child content adapts to the section width */
+  }
+  
+  .logo {
+    width: 200px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
   }
   

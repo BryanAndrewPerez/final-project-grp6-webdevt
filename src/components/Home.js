@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import '../design/Home.css';
 import Login from './Login';
 import Signup from './Signup';
+import logo from '../design/Logo.png';
 
 const Home = () => {
   const [activeView, setActiveView] = useState(''); // Tracks whether to show Login or Signup
@@ -21,6 +22,7 @@ const Home = () => {
     <div className="logsigncontainer">
       {/* Left Section */}
       <div className="left-section">
+      <img src={logo} alt="Logo"  className='logo'/>
         <h1>Penny-Wise</h1>
         <p>Be wise with your pennies</p>
         <div>
