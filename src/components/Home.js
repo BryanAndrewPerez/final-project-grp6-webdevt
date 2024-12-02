@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import '../design/Home.css';
 import Login from './Login';
 import Signup from './Signup';
-import logo from '../design/Logo.png';
+import logo from '../design/Teal_logo.png';
 
 const Home = () => {
   const [activeView, setActiveView] = useState(''); // Tracks whether to show Login or Signup
