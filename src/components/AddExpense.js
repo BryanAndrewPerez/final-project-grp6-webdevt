@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../design/AddExpense.css'
+import '../design/AddExpense.css';
 
 const AddExpense = () => {
   const [expense, setExpense] = useState({ amount: '', description: '', category: '', date: '' });
@@ -25,6 +25,9 @@ const AddExpense = () => {
       amountSpent: currentBudget.amountSpent + expenseAmount,
     };
     localStorage.setItem('budget', JSON.stringify(updatedBudget));
+
+    // Dispatch a custom event to notify that expenses have been updated
+    window.dispatchEvent(new Event('expensesUpdated'));
 
     setExpense({ amount: '', description: '', category: '', date: '' });
 

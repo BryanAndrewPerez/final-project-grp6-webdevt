@@ -44,7 +44,7 @@ const ExpenseReport = ({ userRole }) => {
   }, []);
 
   // Calculate total expenses
-  const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
+  const totalExpenses = expenses.reduce((sum, e) => sum + parseFloat(e.amount || 0), 0); // Fixed issue if amount is missing or invalid
   const formattedTotalExpenses = isNaN(totalExpenses) ? 0 : totalExpenses;
 
   // Transform expenses into chart data
@@ -59,7 +59,7 @@ const ExpenseReport = ({ userRole }) => {
     if (!acc[date]) {
       acc[date] = { date, amount: 0 };
     }
-    acc[date].amount += expense.amount;
+    acc[date].amount += parseFloat(expense.amount || 0); // Ensure amount is valid
     return acc;
   }, {});
 
@@ -86,7 +86,7 @@ const ExpenseReport = ({ userRole }) => {
       )}
 
       {/* Graphs */}
-      <div style={{ display: 'flex', justifyContent: 'space-between',  marginBottom: '100px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '100px' }}>
         {/* Expense by Category */}
         <div style={{ width: '48%', height: 300 }}>
           <h4>Expense by Category</h4>
@@ -97,10 +97,7 @@ const ExpenseReport = ({ userRole }) => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="amount" fill="#8884d8"
-              radius={[10, 10, 0, 0]}  // Rounded corners for the bars (top-left and top-right)
-              barSize={30}  // Adjust the width of each bar
-              />
+              <Bar dataKey="amount" fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
         </div>
