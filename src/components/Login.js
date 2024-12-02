@@ -20,22 +20,28 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     const users = JSON.parse(localStorage.getItem('users')) || [];
-
+  
     const foundUser = users.find(user => user.email === formData.email);
-
-    // Check if admin credentials are entered
+  
+    
     if (formData.email === 'admin@gmail.com' && formData.password === 'admin') {
       console.log('Admin login successful');
-      navigate('/admin-tab');  // Navigate to the AdminTab
+      navigate('/admin-tab');  
     } else if (foundUser && foundUser.password === formData.password) {
       console.log('Login successful');
+      
+      localStorage.setItem('activeUser', JSON.stringify({
+        username: foundUser.username,
+        email: foundUser.email
+      }));
       navigate('/dashboard');
     } else {
       alert('Invalid credentials');
     }
   };
+  
 
   return (
     <div>

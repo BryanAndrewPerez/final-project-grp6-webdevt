@@ -1,4 +1,4 @@
-/* Main container */
+
 .set-budget-container {
   margin: 0 auto;
   padding: 30px;
@@ -7,7 +7,7 @@
   box-shadow: 0 0 10px #00C8C8;
 }
 
-/* Form heading */
+
 .set-budget-container h2 {
   text-align: center;
   font-size: 24px;
@@ -18,21 +18,21 @@ label{
   color:#ffffff;
 }
 
-/* Form styling */
+
 .set-budget-form {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adds space between form fields */
+  gap: 20px;
 }
 
-/* Form groups (input sections) */
+
 .form-group {
   display: flex;
   flex-direction: column;
   
 }
 
-/* Label styling */
+
 .form-group label {
   font-size: 16px;
   color: #333;
@@ -41,7 +41,7 @@ label{
   display: block;
 }
 
-/* Input and Select box styling */
+
 .form-control {
   width: 100%;
   padding: 14px;
@@ -53,7 +53,7 @@ label{
   box-sizing: border-box;
 }
 
-/* Total Budget input specific styling */
+
 
 
 .form-control:focus {
@@ -61,17 +61,17 @@ label{
   outline: none;
 }
 
-/* Styling for the "Weekly" option in the select dropdown */
+
 .form-control option {
   font-size: 16px;
 }
 
 .form-control option:checked {
-  background-color: #2196f3; /* Highlight selected option */
-  color: white; /* White text for selected option */
+  background-color: #2196f3;
+  color: white;
 }
 
-/* Submit button styling */
+
 .submit-button {
   padding: 14px;
   background-color: #FAF3E0 !important; 
@@ -84,7 +84,7 @@ label{
   transition: background-color 0.3s;
 }
 
-/* Button hover effect */
+
 .submit-button:hover {
   background-color: #FAF3E0;
 }

@@ -4,11 +4,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f8ff; /* Light blue background for contrast */
+    background-color: #f0f8ff;
   }
   
   .container {
-    background-color: #e0f7fa; /* Light green background */
+    background-color: #e0f7fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -16,17 +16,17 @@ body {
   }
   
   h1 {
-    color: #00C8C8; /* Dark green */
+    color: #00C8C8;
     margin-bottom: 10px;
   }
   
   p {
-    color: #00C8C8; /* Teal-ish green */
+    color: #00C8C8;
     margin-bottom: 20px;
   }
   
   button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
     border: 10px;
     padding: 10px 20px;
@@ -45,7 +45,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc; /* Slightly darker gray border */
+    border: 1px solid #ccc;
     border-radius: 5px;
   }
   
@@ -57,7 +57,7 @@ body {
     font-size: 20px;
     margin: 0 10px;
     cursor: pointer;
-    color: #4CAF50; /* Green social icons */
+    color: #4CAF50;
   }
   
   @media (max-width: 768px) {
@@ -75,20 +75,20 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(247, 247, 247, 0.96);
     max-width: 800px;
-    min-width: 600px; /* Minimum width for consistency */
-    min-height: 500px; /* Ensure container doesn't shrink vertically */
+    min-width: 600px;
+    min-height: 500px;
     margin: auto;
-    transition: all 0.3s ease; /* Smooth transitions for layout changes */
+    transition: all 0.3s ease;
   }
   
   .left-section,
   .right-section {
-    flex: 1; /* Take up equal space */
+    flex: 1;
     padding: 20px;
   }
   
   .left-section {
-    border-right: 1px solid #ccc; /* Add a divider */
+    border-right: 1px solid #ccc;
     text-align: center;
   }
   
@@ -97,15 +97,15 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Prevent content from breaking layout */
+    overflow: hidden;
   }
   
   .right-section > * {
-    width: 100%; /* Ensure the child content adapts to the section width */
+    width: 100%;
   }
   
   .logo {
-    width: 200px; /* Set the width */
-    height: auto; /* Maintain aspect ratio */
+    width: 200px;
+    height: auto;
   }
   

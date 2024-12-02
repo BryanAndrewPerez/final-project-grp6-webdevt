@@ -1,9 +1,9 @@
-/* Main container */
+
 .add-expense-container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 30px;  /* Increased padding for better spacing */
+    padding: 30px; 
     background-color:  #1E1E1E;
     border-radius: 8px;
     box-shadow: 0 0 10px #00C8C8;
@@ -11,7 +11,7 @@
   label{
     color:#ffffff;
   }
-  /* Form heading */
+ 
   .add-expense-container h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -19,48 +19,48 @@
     color: #ffffff;
   }
   
-  /* Form styling */
+ 
   .expense-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Increased gap between form fields for clarity */
+    gap: 20px;
   }
   
-  /* Form groups (input sections) */
+ 
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px; /* Consistent space between label and input */
+    gap: 8px;
   }
   
-  /* Label styling */
+ 
   .form-group label {
     font-size: 16px;
     color: #333;
-    font-weight: 600; /* Makes the label stand out */
+    font-weight: 600;
     margin-bottom: 5px;
     display: block;
   }
   
-  /* Input and Select box styling */
+ 
   .form-control {
     width: 100%;
-    padding: 14px;  /* More padding for larger input fields */
+    padding: 14px; 
     font-size: 16px;
     border-radius: 4px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     margin-top: 5px;
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    box-sizing: border-box;
   }
   
-  /* Input focus effect */
+ 
   .form-control:focus {
     border-color: #2196f3;
     outline: none;
   }
   
-  /* Submit button styling */
+ 
   .submit-button {
     padding: 14px;
     background-color: #4CAF50;
@@ -71,10 +71,10 @@
     cursor: pointer;
     margin-top: 20px;
     transition: background-color 0.3s;
-    width: 100%; /* Make the button full-width */
+    width: 100%;
   }
   
-  /* Button hover effect */
+ 
   .submit-button:hover {
     background-color: #45a049;
   }

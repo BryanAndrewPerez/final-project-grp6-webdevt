@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../design/ExpenseList.css'
+import '../design/ExpenseList.css';
 
 const ExpenseList = () => {
   const [expenses, setExpenses] = useState([]);
@@ -107,7 +107,6 @@ const ExpenseList = () => {
 
   return (
     <div>
-      
       <div className="filter-sort-container">
         <h2>Expenses</h2>
         <div className="filter-sort-item">
@@ -133,7 +132,7 @@ const ExpenseList = () => {
             <option value="Others">Others</option>
           </select>
         </div>
-     
+      </div>
 
       {expenses.length === 0 ? (
         <p>No expenses added yet.</p>
@@ -167,11 +166,17 @@ const ExpenseList = () => {
                     />
                   </td>
                   <td>
-                    <input
-                      type="text"
+                    <select
                       value={editedExpense.category}
                       onChange={(e) => setEditedExpense({ ...editedExpense, category: e.target.value })}
-                    />
+                    >
+                      <option value="Food">Food</option>
+                      <option value="Transportation">Transportation</option>
+                      <option value="Utilities">Utilities</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Others">Others</option>
+                    </select>
                   </td>
                   <td>
                     <input
@@ -201,8 +206,9 @@ const ExpenseList = () => {
           </tbody>
         </table>
       )}
-    </div> </div>
+    </div>
   );
 };
 
 export default ExpenseList;
+  

@@ -26,7 +26,7 @@ const AddExpense = () => {
     };
     localStorage.setItem('budget', JSON.stringify(updatedBudget));
 
-    // Dispatch a custom event to notify that expenses have been updated
+    
     window.dispatchEvent(new Event('expensesUpdated'));
 
     setExpense({ amount: '', description: '', category: '', date: '' });
@@ -50,15 +50,16 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label style={{ color: 'white' }}>Description</label>
-          <input
-            type="text"
-            placeholder="Description"
-            value={expense.description}
-            onChange={(e) => setExpense({ ...expense, description: e.target.value })}
-            className="form-control"
-          />
-        </div>
+  <label style={{ color: 'white' }}>Description</label>
+  <textarea
+    placeholder="Description"
+    value={expense.description}
+    onChange={(e) => setExpense({ ...expense, description: e.target.value })}
+    className="form-control"
+    rows="4"  
+  />
+</div>
+
 
         <div className="form-group">
           <label style={{ color: 'white' }}>Category</label>

@@ -6,10 +6,10 @@ import Signup from './Signup';
 import logo from '../design/Teal_logo.png';
 
 const Home = () => {
-  const [activeView, setActiveView] = useState(''); // Tracks whether to show Login or Signup
+  const [activeView, setActiveView] = useState(''); 
   const location = useLocation();
 
-  // Check for query parameters on mount and update active View if necessary
+  
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const view = queryParams.get('view');

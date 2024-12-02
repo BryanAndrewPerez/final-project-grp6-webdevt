@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
-import '../design/Dashboard.css'; // Import the CSS file
+import '../design/Dashboard.css'; 
 import logo from '../design/Teal_logo.png';
 
 const Dashboard = () => {

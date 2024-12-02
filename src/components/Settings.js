@@ -1,87 +1,107 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
-import '../design/Settings.css'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../design/Settings.css';
 
 const Settings = () => {
-  const [account, setAccount] = useState({ username: '', email: '', password: '' });
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const [currentUser, setCurrentUser] = useState(null); // Holds current user data
+  const [updatedAccount, setUpdatedAccount] = useState({ username: '', email: '', password: '' });
+  const navigate = useNavigate();
+
+  // Fetch the current user data from localStorage when the component loads
+  useEffect(() => {
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const activeUser = JSON.parse(localStorage.getItem('activeUser')); // Active user from localStorage
+
+    if (activeUser) {
+      const user = storedUsers.find((u) => u.username === activeUser.username);
+      if (user) {
+        setCurrentUser(user);
+        setUpdatedAccount(user);
+      }
+    }
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   // Handle updating the account
-  const handleUpdateAccount = async (e) => {
+  const handleUpdateAccount = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/account', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(account),
-      });
 
-      if (response.ok) {
-        console.log('Account updated successfully');
-      } else {
-        console.error('Failed to update account');
-      }
-    } catch (error) {
-      console.error('Failed to update account', error);
-    }
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const updatedUsers = storedUsers.map((user) =>
+      user.username === currentUser.username ? updatedAccount : user
+    );
+
+    // Update the users in localStorage
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    localStorage.setItem('activeUser', JSON.stringify(updatedAccount)); // Update activeUser in localStorage
+    alert('Account updated successfully');
+    setCurrentUser(updatedAccount); // Update state
   };
 
   // Handle deleting the account
-  const handleDeleteAccount = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/account', {
-        method: 'DELETE',
-      });
+  const handleDeleteAccount = () => {
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const updatedUsers = storedUsers.filter((user) => user.username !== currentUser.username);
 
-      if (response.ok) {
-        console.log('Account deleted successfully');
-      } else {
-        console.error('Failed to delete account');
-      }
-    } catch (error) {
-      console.error('Failed to delete account', error);
-    }
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    localStorage.removeItem('activeUser'); // Log out the deleted user
+    alert('Account deleted successfully');
+    navigate('/?view=signup'); // Redirect to signup or home
   };
 
   // Handle logging out
   const handleLogout = () => {
-    // Clear authentication data (e.g., remove token or user info from localStorage)
-    localStorage.removeItem('user'); // Adjust based on how you store the user's data
-    
-    // Redirect to the home page
-    navigate('/'); // This navigates to the home page
+    localStorage.removeItem('activeUser'); // Remove session data
+    alert('Logged out successfully');
+    navigate('/'); // Navigate to home page
+  };
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedAccount({ ...updatedAccount, [name]: value });
   };
 
   return (
-    <div className=' settings-container'>
+    <div className="settings-container">
       <h2>Account Settings</h2>
-      <form onSubmit={handleUpdateAccount}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={account.username}
-          onChange={(e) => setAccount({ ...account, username: e.target.value })}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={account.email}
-          onChange={(e) => setAccount({ ...account, email: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={account.password}
-          onChange={(e) => setAccount({ ...account, password: e.target.value })}
-        />
-        
-      </form>
-      <button type="submit" >Update Account</button>
+      {currentUser ? (
+        <form onSubmit={handleUpdateAccount}>
+          <div>
+            <label>Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={updatedAccount.username}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={updatedAccount.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={updatedAccount.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit">Update Account</button>
+        </form>
+      ) : (
+        <p>Loading account information...</p>
+      )}
       <button onClick={handleDeleteAccount}>Delete Account</button>
-      
-      {/* Log Out Button */}
       <button onClick={handleLogout}>Log Out</button>
     </div>
   );

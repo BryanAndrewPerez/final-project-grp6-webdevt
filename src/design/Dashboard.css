@@ -1,17 +1,17 @@
-/* Ensure the main container takes full height */
+
 .logo {
-  width: 200px; /* Set the width */
-  height: auto; /* Maintain aspect ratio */
+  width: 200px;
+  height: auto;
 }
 
   
-  /* Sidebar container */
+ 
   .sidebar {
-    position: fixed; /* Fix the sidebar to the left of the screen */
+    position: fixed;
     top: 0;
     left: 0;
     width: 200px;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
     background-color:  #1E1E1E;
     padding: 20px;
     box-shadow: 0 0 10px #00C8C8;
@@ -19,13 +19,13 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
     margin-right: 20px;
-    border-top-right-radius: 10px; /* Top-right corner */
+    border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   }
   
-  /* Main content area */
+ 
   .main-content {
     padding: 20px;
     overflow-y: auto;
@@ -33,7 +33,7 @@
     height: 700px;
   }
   
-  /* Button styles */
+ 
   .sidebar button {
     width: 100%;  
     padding: 10px;

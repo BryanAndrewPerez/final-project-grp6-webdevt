@@ -1,69 +1,69 @@
 body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #000000; /* Light blue background */
-  }
-  
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+.settings-container {
+  font-family: Arial, sans-serif;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00C8C8;
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #388e8e;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Ensure inputs take full width */
+  padding: 12px; /* Increased padding for better height */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #FAF3E0;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px; /* Adjusted margin to create consistent space */
+  width: 100%; /* Ensure button takes full width */
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #FAF3E0;
+}
+
+button:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Adjust padding and margins for smaller screens */
+@media (max-width: 400px) {
   .settings-container {
-    font-family: Arial, sans-serif;
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color:  #1E1E1E;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00C8C8;
+    padding: 15px;
   }
-  .submit{
-    color: #FAF3E0;
-  }
-  h2 {
-    color:  #ffffff; /* Dark green */
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  label {
-    display: block; /* Makes labels occupy full width - optional */
-    margin-bottom: 5px;
-    color: #388e8e; /* Teal-ish green */
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: calc(100% - 22px); /* Adjust for padding and border */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  
-  button {
-    background-color: #FAF3E0; /* Green */
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px; /* Space between buttons */
-    width: 100%;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #FAF3E0; /* Darker green on hover */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 400px) {
-    .settings-container {
-      padding: 20px;
-    }
-  }
-  
+}

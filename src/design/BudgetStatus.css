@@ -1,4 +1,4 @@
-/* Budget Status Container */
+
 .budget-status-container {
     font-family: Arial, sans-serif;
     width: 80%;
@@ -34,7 +34,7 @@
     text-align: center;
   }
   
-  /* Budget Modal Overlay */
+ 
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -48,7 +48,7 @@
     z-index: 999;
   }
   
-  /* Modal Box */
+ 
   .modal {
     background: #fff;
     padding: 25px;
@@ -81,7 +81,7 @@
     outline: none;
   }
   
-  /* Modal Buttons */
+ 
   .modal button {
     padding: 12px 20px;
     background-color: #FAF3E0;
@@ -108,23 +108,27 @@
     background-color: #e53935;
   }
   
-  /* Budget Threshold Input */
-  .budget-status-container input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 15px;
-    background-color: #f9f9f9;
-  }
+ 
+
+.budget-status-container input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 15px auto;
+  display: block;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
   
   .budget-status-container input:focus {
     border-color: #2196f3;
     outline: none;
   }
   
-  /* Update Budget Button */
+ 
   .budget-status-container button {
     padding: 12px 20px;
     background-color: #FAF3E0;
@@ -135,14 +139,13 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 20px;
-    width: 100%;
   }
   
   .budget-status-container button:hover {
-    background-color: #FAF3E0;
+    background-color: #FFD700;
   }
   
-  /* Modal Close Button */
+ 
   .budget-status-container button.close-modal {
     background-color: #f44336;
     margin-top: 10px;
