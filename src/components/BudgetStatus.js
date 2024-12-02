@@ -43,7 +43,7 @@ const BudgetStatus = () => {
   const [timeframe, setTimeframe] = useState('');
   const [timestamp, setTimestamp] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [threshold, setThreshold] = useState(0); // New threshold state
+  const [threshold, setThreshold] = useState(0); 
   const [notification, setNotification] = useState('');
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const BudgetStatus = () => {
         setBudgetStatus(savedBudget);
         setTimeframe(savedTimeframe);
         setTimestamp(savedTimestamp);
-        setThreshold(parseFloat(savedThreshold)); // Load saved threshold
+        setThreshold(parseFloat(savedThreshold)); 
       }
     }
   }, []);

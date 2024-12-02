@@ -1,40 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, CartesianGrid as LineCartesianGrid } from 'recharts';
+import '../design/ExpenseReport.css';
 
-// Example default expenses
-const defaultExpenses = []; // Default empty expenses after clearing
+const defaultExpenses = []; 
 
 const ExpenseReport = ({ userRole }) => {
   const [expenses, setExpenses] = useState([]);
-  const [remainingBudget, setRemainingBudget] = useState(0); // Updated dynamically
-  const [totalBudget, setTotalBudget] = useState(0); // Updated dynamically
+  const [remainingBudget, setRemainingBudget] = useState(0); 
+  const [totalBudget, setTotalBudget] = useState(0); 
 
-  // Fetch expenses from localStorage or default
+  
   const fetchExpenses = () => {
     const savedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
     setExpenses(savedExpenses);
   };
 
-  // Fetch budget status
+  
   const fetchBudgetStatus = () => {
     const savedBudget = JSON.parse(localStorage.getItem('budget')) || { totalBudget: 0, amountSpent: 0 };
     setTotalBudget(savedBudget.totalBudget);
     setRemainingBudget(savedBudget.totalBudget - savedBudget.amountSpent);
   };
 
-  // Handle clearing of expenses (Admin only)
+  
   const handleClearExpenses = () => {
     localStorage.setItem('expenses', JSON.stringify(defaultExpenses));
     setExpenses(defaultExpenses);
-    window.dispatchEvent(new Event('expensesCleared')); // Dispatch the event to notify listeners
+    window.dispatchEvent(new Event('expensesCleared')); 
   };
 
   useEffect(() => {
-    // Initial load
+    
     fetchExpenses();
     fetchBudgetStatus();
 
-    // Listen for custom 'expensesCleared' event
+    
     const handleExpensesCleared = () => fetchExpenses();
     window.addEventListener('expensesCleared', handleExpensesCleared);
 
@@ -43,31 +43,31 @@ const ExpenseReport = ({ userRole }) => {
     };
   }, []);
 
-  // Calculate total expenses
-  const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
+  
+  const totalExpenses = expenses.reduce((sum, e) => sum + parseFloat(e.amount || 0), 0); 
   const formattedTotalExpenses = isNaN(totalExpenses) ? 0 : totalExpenses;
 
-  // Transform expenses into chart data
+  
   const chartData = expenses.map((expense) => ({
     category: expense.category,
     amount: expense.amount,
   }));
 
-  // Group expenses by date to calculate spending trends
+  
   const spendingTrends = expenses.reduce((acc, expense) => {
-    const date = expense.date; // Ensure each expense includes a 'date' field
+    const date = expense.date; 
     if (!acc[date]) {
       acc[date] = { date, amount: 0 };
     }
-    acc[date].amount += expense.amount;
+    acc[date].amount += parseFloat(expense.amount || 0); 
     return acc;
   }, {});
 
-  // Convert spending trends to array format
+  
   const trendData = Object.values(spendingTrends);
 
   return (
-    <div style={{ width: '100%', padding: '20px' }}>
+    <div className="expense-container" style={{ width: '100%', padding: '20px' }}>
       <h3>Expense Report</h3>
 
       {/* Total Expenses Overview */}
@@ -86,7 +86,7 @@ const ExpenseReport = ({ userRole }) => {
       )}
 
       {/* Graphs */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '100px' }}>
         {/* Expense by Category */}
         <div style={{ width: '48%', height: 300 }}>
           <h4>Expense by Category</h4>
@@ -120,8 +120,8 @@ const ExpenseReport = ({ userRole }) => {
 
       {/* Alerts */}
       {remainingBudget < 100 && (
-        <div style={{ color: 'red', fontWeight: 'bold' }}>
-          <h4>Warning: Your remaining budget is running low!</h4>
+        <div style={{ color: 'red', fontWeight: 'bold' }} className='warning'>
+          <h5>Warning: Your remaining budget is running low!</h5>
         </div>
       )}
     </div>

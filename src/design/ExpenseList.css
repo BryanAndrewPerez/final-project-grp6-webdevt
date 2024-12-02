@@ -1,86 +1,119 @@
 /* Overall container */
 .filter-sort-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-  
-  .filter-sort-item {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .filter-sort-item:last-child {
-    margin-right: 0;
-  }
-  
-  .filter-sort-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    background-color: #f7f7f7;
-    color: #333;
-    box-sizing: border-box;
-  }
-  
-  .filter-sort-select:focus {
-    border-color: #2196f3;
-    outline: none;
-  }
-  
-  /* Table styling */
-  .expense-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .expense-table th,
-  .expense-table td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-  
-  .expense-table th {
-    background-color: #2196f3;
-    color: white;
-  }
-  
-  .expense-table td {
-    background-color: #f9f9f9;
-  }
-  
-  .expense-table input[type="number"],
-  .expense-table input[type="text"],
-  .expense-table input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .expense-table button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .expense-table button:hover {
-    background-color: #45a049; /* Darker green */
-  }
-  
-  .expense-table button:focus {
-    outline: none;
-  }
-  
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00C8C8;
+  display: block; /* Stack the filter and sort items vertically */
+}
+
+.filter-sort-container h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.filter-sort-item {
+  margin-bottom: 20px; /* Ensure space between the dropdowns */
+}
+
+.filter-sort-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.filter-sort-select:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+/* Table container */
+.table-container {
+  max-height: 1000px; /* Adjust height as needed */
+  overflow-y: auto; /* Enable vertical scrolling within the container */
+  overflow-x: auto; /* Enable horizontal scrolling if the table is too wide */
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.expense-table th,
+.expense-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.expense-table th {
+  background-color: #1E1E1E;
+  color: white;
+}
+
+.expense-table td {
+  color: #f9f9f9;
+}
+
+.expense-table input[type="number"],
+.expense-table input[type="text"],
+.expense-table input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.expense-table button {
+  background-color: #FAF3E0; /* Green */
+  border: none;
+  color: black;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expense-table button:hover {
+  background-color: #FAF3E0; /* Darker green */
+}
+
+.expense-table button:focus {
+  outline: none;
+}
+
+/* Inputs and select within table rows */
+.expense-table input[type="number"],
+.expense-table input[type="text"],
+.expense-table input[type="date"],
+.expense-table select {
+  width: calc(100% - 16px); /* Adjust width to fit within cell padding */
+  padding: 4px; /* Add padding for comfortable typing */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in element's total width */
+  font-size: 14px; /* Match font size with other text */
+}
+
+.expense-table select {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.expense-table select:focus,
+.expense-table input:focus {
+  border-color: #2196f3; 
+  outline: none;
+}

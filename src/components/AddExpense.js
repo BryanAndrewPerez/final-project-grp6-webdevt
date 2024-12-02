@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../design/AddExpense.css'
+import '../design/AddExpense.css';
 
 const AddExpense = () => {
   const [expense, setExpense] = useState({ amount: '', description: '', category: '', date: '' });
@@ -26,6 +26,9 @@ const AddExpense = () => {
     };
     localStorage.setItem('budget', JSON.stringify(updatedBudget));
 
+    
+    window.dispatchEvent(new Event('expensesUpdated'));
+
     setExpense({ amount: '', description: '', category: '', date: '' });
 
     alert('Expense added successfully!');
@@ -36,7 +39,7 @@ const AddExpense = () => {
       <h2>Add Expense</h2>
       <form onSubmit={handleAddExpense} className="expense-form">
         <div className="form-group">
-          <label>Amount</label>
+          <label style={{ color: 'white' }}>Amount</label>
           <input
             type="number"
             placeholder="Amount"
@@ -47,18 +50,19 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label>Description</label>
-          <input
-            type="text"
-            placeholder="Description"
-            value={expense.description}
-            onChange={(e) => setExpense({ ...expense, description: e.target.value })}
-            className="form-control"
-          />
-        </div>
+  <label style={{ color: 'white' }}>Description</label>
+  <textarea
+    placeholder="Description"
+    value={expense.description}
+    onChange={(e) => setExpense({ ...expense, description: e.target.value })}
+    className="form-control"
+    rows="4"  
+  />
+</div>
+
 
         <div className="form-group">
-          <label>Category</label>
+          <label style={{ color: 'white' }}>Category</label>
           <select
             value={expense.category}
             onChange={(e) => setExpense({ ...expense, category: e.target.value })}
@@ -72,7 +76,7 @@ const AddExpense = () => {
         </div>
 
         <div className="form-group">
-          <label>Date</label>
+          <label style={{ color: 'white' }}>Date</label>
           <input
             type="date"
             value={expense.date}

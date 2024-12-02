@@ -17,12 +17,10 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/settings" element={<Settings />}/>
           
           {/* Dashboard Route with Nested Routes */}
           <Route path="/dashboard" element={<Dashboard />}>
@@ -31,6 +29,7 @@ function App() {
             <Route path="add-expense" element={<AddExpense />} />
             <Route path="expense-list" element={<ExpenseList />} />
             <Route path="expense-report" element={<ExpenseReport />} />
+            <Route path="settings" element={<Settings />} />
           </Route>
 
           {/* Admin Tab Route */}
